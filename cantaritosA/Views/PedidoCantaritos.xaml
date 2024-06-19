@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="cantaritosA.Views.PedidoCantaritos"
+             Title="PedidoCantaritos"
+             BackgroundColor="#9EC9CC"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid RowDefinitions=".5*,.8*">
+
+        <Grid RowDefinitions=".9*,0*">
+            <Image Aspect="AspectFill" Source="food.png"/>
+            <Grid BackgroundColor="#656565" Opacity=".6"/>
+        </Grid>
+
+        <Grid ColumnDefinitions=".9*,.7*">
+
+            <Image 
+                    Aspect="AspectFit"
+                    HeightRequest="1000"
+                    Margin="0,57,0,10"
+                    VerticalOptions="Center"
+                    Source="logo.png"/>
+        </Grid>
+
+        <VerticalStackLayout Margin="0,200,10,0">
+            <Label 
+                FontAttributes="Bold"
+                FontFamily="Lora"
+                FontSize="Medium"
+                HorizontalOptions="End"
+                Text="Mesero"
+                TextColor="#010101"/>
+
+            <Label 
+                FontFamily="Sedan"
+                HorizontalOptions="End" 
+                Text="Samuel Balleza Mtz"
+                TextColor="Wheat"/>
+        </VerticalStackLayout>
+
+        <Grid Grid.Row="1">
+            <RoundRectangle
+              BackgroundColor="#FFFEDF"
+              CornerRadius="1,1,1,1"/>
+            
+            <CollectionView>
+
+                <CollectionView.ItemsSource>
+
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Store 1</x:String>
+                    </x:Array>
+
+                </CollectionView.ItemsSource>
+
+                <CollectionView.ItemsLayout>
+
+                    <LinearItemsLayout ItemSpacing="15" 
+                                       Orientation="Vertical">
+                    </LinearItemsLayout>
+
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="30,30,30,30"
+                          HeightRequest="600"
+                          RowDefinitions=".5*,.3*,.3*,.0*">
+
+                            <RoundRectangle Grid.RowSpan="2"
+                                        Background="White"
+                                        CornerRadius="10">
+
+                                <RoundRectangle.Shadow>
+                                    <Shadow Brush="#CFD0D4"
+                                            Opacity="0.4"
+                                            Offset="10,10"/>
+                                </RoundRectangle.Shadow>
+                            </RoundRectangle>
+
+                            <Grid Margin="10">
+                                <Label
+                                     FontFamily="Cursiva"
+                                     FontSize="Large"
+                                     HorizontalOptions="Center"
+                                     Text="Pedido..."
+                                     TextColor="Black"/>
+                            </Grid>
+
+                            <Label x:Name="cntRespuesta"
+                                   TextColor="Red"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center">
+                                
+                            </Label>
+                            
+                            <Grid Padding="0"
+                                  Margin="17,79,20,20">
+
+                                <Entry 
+                                     x:Name="formaPagoEntry"
+                                     FontFamily="Regular"
+                                     HorizontalOptions="Fill" 
+                                     Placeholder="Forma de Pago"
+                                     Text=""
+                                     TextColor="Black"
+                                     VerticalOptions="Start"/>
+                            </Grid>
+
+                            <Grid Padding="17"
+                                  Margin="2,120,0,0">
+
+                                <Entry
+                                     x:Name="productoEntry"
+                                     FontFamily="Regular"
+                                     HorizontalOptions="Fill" 
+                                     Placeholder="Cantarito"
+                                     Text=""
+                                     TextColor="Black"/>
+                            </Grid>
+
+                            <Grid Padding="1"
+                                  Margin="21,200,0,0">
+
+                                <Entry 
+                                    x:Name="costoEntry"
+                                    FontFamily="Regular"
+                                    HorizontalOptions="Fill"
+                                    Placeholder="Costo"
+                                    Text=""
+                                    TextColor="Black"/>
+                            </Grid>
+
+                            <Grid Margin="10,10,10,10"
+                                  Grid.Row="1"
+                                  Padding="20">
+
+                                <Label
+                                     FontFamily="Cursiva"
+                                     FontSize="Large"
+                                     HorizontalOptions="Center"
+                                     Text="Gracias!!"
+                                     TextColor="Black"/>
+                            </Grid>
+
+                            <Grid Padding="20"
+                                  Grid.Row="1"
+                                  Margin="1,1,150,0">
+
+                                <Button
+                                    Clicked="Button_Clicked"
+                                    HorizontalOptions="Fill"
+                                    VerticalOptions="End"
+                                    BackgroundColor="Salmon"
+                                    FontFamily="Lora"
+                                    Text="Finalizar"
+                                    TextColor="Black"/>
+                            </Grid>
+
+                            <Grid Padding="20"
+                                  Grid.Row="1"
+                                  Margin="150,1,1,0">
+
+                                <Button
+                                      Clicked="Clicked"
+                                      HorizontalOptions="Fill"
+                                      VerticalOptions="End"
+                                      BackgroundColor="Beige"
+                                      FontFamily="Lora"
+                                      Text="Regresar"
+                                      TextColor="Black"/>
+                            </Grid>
+
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+
+    </Grid>
+
+</ContentPage>

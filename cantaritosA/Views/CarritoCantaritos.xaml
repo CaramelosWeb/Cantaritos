@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="cantaritosA.Views.CarritoCantaritos"
+             Title="CarritoCantaritos">
+
+    <Grid RowDefinitions=".5*,.8*">
+
+        <Grid RowDefinitions=".9*,0*">
+            <Image Aspect="AspectFill" Source="food.png"/>
+            <Grid BackgroundColor="#656565" Opacity=".6"/>
+        </Grid>
+
+        <Grid ColumnDefinitions=".9*,.7*">
+
+            <Image
+                    Aspect="AspectFit"
+                    HeightRequest="200"
+                    Margin="0,50,0,20"
+                    VerticalOptions="Center"
+                    Source="logo.png"/>
+        </Grid>
+
+        <VerticalStackLayout Margin="0,150,10,0">
+            <Label 
+                  FontAttributes="Bold"
+                  FontFamily="Lora"
+                  FontSize="Medium"
+                  HorizontalOptions="End"
+                  Text="Mesero"
+                  TextColor="#010101"/>
+
+            <Label 
+                 FontFamily="Sedan"
+                 HorizontalOptions="End" 
+                 Text="Samuel Balleza Mtz"
+                 TextColor="Wheat"/>
+        </VerticalStackLayout>
+
+        <Grid Grid.Row="1">
+            <RoundRectangle
+              BackgroundColor="#FFFEDF"
+              CornerRadius="1,1,1,1"/>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <RoundRectangle
+              BackgroundColor="#FFFEDF"
+              CornerRadius="1,1,1,1"/>
+
+            <Grid Grid.Row="1">
+                <RoundRectangle Margin="-2,-30,-2,-2"
+                            CornerRadius="30,30,0,0"
+                            Fill="#FFFEDF"/>
+                <Image 
+                   Margin="10,0,10,350"
+                   HorizontalOptions="End"
+                   HeightRequest="100"
+                   Source="carrito.png"/>
+
+                <Label 
+                     Margin="20,0,0,0"  
+                     FontAttributes="Bold"
+                     FontFamily="Lora"
+                     FontSize="Medium"
+                     Text="Carrito de Compras"
+                     TextColor="#010101"/>
+
+                <Label 
+                     Margin="30,40,0,0"
+                     FontFamily="Sedan"
+                     Text="BELICAS..."
+                     TextColor="#A7A7A7"/>
+            </Grid>
+
+            <Grid Grid.Row="1" Padding="5,110,5,80">
+                <RoundRectangle BackgroundColor="White"
+                    CornerRadius="30,30,0,0"/>
+
+                <CollectionView ItemsSource="{Binding Stores}">
+
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout ItemSpacing="15"
+                               Orientation="Vertical"/>
+                    </CollectionView.ItemsLayout>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="10,10,10,10"
+                                  HeightRequest="20"
+                                  RowDefinitions=".6*,.4*">
+
+                                <RoundRectangle Grid.RowSpan="2"
+                                    Background="#FFFEDF"
+                                    CornerRadius="10">
+
+                                    <RoundRectangle.Shadow>
+                                        <Shadow
+                                             Brush="#CFD0D4"
+                                             Opacity="0.8"
+                                             Offset="10,10"/>
+                                    </RoundRectangle.Shadow>
+
+                                </RoundRectangle>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+            
+             <Grid Grid.Row="1"
+                   Grid.Column="2">
+
+                <HorizontalStackLayout
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center">
+                    <Image 
+                         Margin="0,0,15,40"
+                         VerticalOptions="Center"
+                         WidthRequest="238"
+                         Source="tumbado.jpg">
+                    </Image>
+                </HorizontalStackLayout>
+
+                <Entry 
+                     Grid.Row="1"
+                     Grid.Column="2"
+                     Margin="0,300,90,0"
+                     FontFamily="Lora"
+                     HorizontalOptions="End" 
+                     Placeholder="Cantidad"
+                     Text=""
+                     TextColor="Black"
+                     VerticalOptions="Start"/>
+
+                <Label 
+                   Margin="10,310,30,0"
+                   FontSize="Body"
+                   FontAttributes="Bold"
+                   FontFamily="Lora"
+                   HorizontalOptions="End" 
+                   Text="140$"
+                   TextColor="Black"
+                   VerticalOptions="Start"/>
+
+                <Label 
+                   Margin="10,310,260,0"
+                   FontAttributes="Bold"
+                   FontFamily="Lora"
+                   FontSize="Medium"
+                   HorizontalOptions="End" 
+                   Text="Loco"
+                   TextColor="Black"
+                   VerticalOptions="Start"/>
+
+            </Grid>
+
+          
+
+            <Grid Padding="20"
+                Grid.Row="1"
+                Margin="1,1,180,0">
+
+                <Button
+                   Clicked="Button_Clicked"
+                   HorizontalOptions="Fill"
+                   VerticalOptions="End"
+                   BackgroundColor="Salmon"
+                   FontFamily="Lora"
+                   Text="Pedir"
+                   TextColor="Black"/>
+            </Grid>
+
+            <Grid Padding="20"
+                  Grid.Row="1"
+                  Margin="180,1,1,0">
+
+                <Button
+                   Clicked="Clicked1"
+                   HorizontalOptions="Fill"
+                   VerticalOptions="End"
+                   BackgroundColor="Beige"
+                   FontFamily="Lora"
+                   Text="Regresar"
+                   TextColor="Black"/>
+            </Grid>
+
+        </Grid>
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="cantaritosA.Views.MenuCantaritos"
+             Title="MenuCantaritos"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#656565">
+
+    <Grid RowDefinitions=".2*,.8*">
+
+        <VerticalStackLayout Spacing="10">
+
+            <Label
+                Margin="190,30,0,0"
+                FontAttributes="Bold"
+                FontFamily="Lora"
+                FontSize="Medium"
+                Text="Menu Belico Ordene..."
+                HorizontalOptions="EndAndExpand"
+                TextColor="White"/>
+
+        </VerticalStackLayout>
+
+        <Grid ColumnDefinitions=".7*,.8*">
+
+            <ImageButton Clicked="ImageButton_Clicked"
+                         Source="logo.png"
+                         Aspect="AspectFit"
+                         HeightRequest="150"
+                         Margin="0,30,35,10"
+                         BorderColor="#656565"
+                         BackgroundColor="#656565"
+                         WidthRequest="160"
+                         VerticalOptions="Center">
+            </ImageButton>
+        </Grid>
+
+            <Label 
+                FontAttributes="Bold"
+                Margin="0,110,0,0"
+                FontFamily="Lora"
+                FontSize="Medium"
+                HorizontalOptions="Center"
+                Text="Mesero:"
+                TextColor="#010101"/>
+                
+            <Label 
+                   FontFamily="Sedan"
+                   Margin="0,120,10,0"
+                   HorizontalOptions="End" 
+                   Text="Samuel Balleza Mtz"
+                   TextColor="Wheat"/>
+
+        <Grid Grid.Row="1">
+            <RoundRectangle BackgroundColor="White"
+                            CornerRadius="25,25,0,0"/>
+
+            <CollectionView ItemsSource="{Binding Stores}">
+
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout ItemSpacing="15"
+                                       Orientation="Vertical"/>
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="20,20,20,0"
+                              HeightRequest="250"
+                              RowDefinitions=".6*,.4*">
+                            
+                            <RoundRectangle Grid.RowSpan="2"
+                                            Background="#FFFEDF"
+                                            CornerRadius="10">
+                                
+                                <RoundRectangle.Shadow>
+                                   <Shadow
+                                       Brush="#CFD0D4"
+                                       Opacity="0.8"
+                                       Offset="10,10"/>
+                                </RoundRectangle.Shadow>
+                               
+                            </RoundRectangle>
+                            <Grid ColumnDefinitions=".4*,.2*,.4*"
+                                  RowDefinitions=".6*,.4*">
+                                <Image
+                                    Grid.RowSpan="2"
+                                    Grid.ColumnSpan="3"
+                                    Aspect="AspectFill"
+                                    Source="{Binding header}" />
+
+                                <Grid Grid.Row="1"
+                                      Grid.Column="2">
+                                    <RoundRectangle CornerRadius="10"
+                                                    Fill="#F8F8F7"
+                                                    HeightRequest="35"
+                                                    HorizontalOptions="Center"
+                                                    VerticalOptions="Center"
+                                                    WidthRequest="75"/>
+
+                                    <HorizontalStackLayout
+                                                  HorizontalOptions="Center"
+                                                  VerticalOptions="Center">
+                                        <Image 
+                                           Margin="0,0,15,0"
+                                           VerticalOptions="Center"
+                                           WidthRequest="18"
+                                           Source="star1.png">
+                                        </Image>
+                                        
+                                        <Label
+                                                Grid.Row="1"
+                                                FontFamily="BlackItalic"
+                                                Text="{Binding puntuacion}"
+                                                TextColor="Black"
+                                                VerticalOptions="Center"/>
+                                    </HorizontalStackLayout>
+                                    
+                                </Grid>
+
+                            </Grid>
+
+                            <Grid 
+                                Grid.Row="1"
+                                Margin="0,0,3,0"
+                                Padding="10"
+                                ColumnDefinitions="*,*,*"
+                                RowDefinitions="*,*">
+
+                                <Label 
+                                   Grid.ColumnSpan="3"
+                                   FontFamily="Sedan"
+                                   FontSize="Large"
+                                   HorizontalTextAlignment="Start"
+                                   Text="{Binding producto}"
+                                   TextColor="Black"/>
+
+                                <Label 
+                                    Grid.ColumnSpan="3"
+                                    Margin="0,10,10,0"
+                                    FontFamily="Lora"
+                                    HorizontalOptions="End" 
+                                    Text="{Binding costo, StringFormat='{0:c}'}"
+                                    TextColor="Black"
+                                    VerticalOptions="Start"/>
+
+                                <HorizontalStackLayout
+                                         Grid.Row="1"
+                                         Grid.Column="2"
+                                         Margin="0,0,0,0"
+                                         HorizontalOptions="End"
+                                         VerticalOptions="Start">
+                                    <Button      
+                                    Clicked="AgregarAlCarrito_Clicked"
+                                     BackgroundColor="White"
+                                     FontFamily="Lora"
+                                     Text="Agregar"
+                                     TextColor="Black"/>
+                                </HorizontalStackLayout>
+
+                                <HorizontalStackLayout
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Margin="0,0,0,0"
+                                        HorizontalOptions="CenterAndExpand"
+                                        VerticalOptions="Start">
+
+                                    <Button                                 
+                                           Clicked="Clicked"
+                                           BackgroundColor="Salmon"
+                                           FontFamily="Lora"
+                                           Text="Ordenar"
+                                           TextColor="Black"/>
+                                </HorizontalStackLayout>
+
+                            </Grid>
+                            
+                        </Grid>
+                        
+                    </DataTemplate>
+                    
+                </CollectionView.ItemTemplate>
+                
+            </CollectionView>
+        
+        </Grid>
+        
+    </Grid>
+    
+</ContentPage>

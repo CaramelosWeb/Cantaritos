@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="cantaritosA.Views.LoginCantaritos"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             Title="LoginCantaritos"
+              NavigationPage.HasNavigationBar="False">
+
+    <Grid RowDefinitions=".3*,.7*">
+        <Image Aspect="AspectFill" Source="food.png"/>
+        <Grid BackgroundColor="#656565" Opacity=".8"/>
+
+        <Grid ColumnDefinitions="*,*">
+
+            <Image 
+                Aspect="AspectFit"
+                HeightRequest="1000"
+                Source="logo.png"/>
+
+            <ImageButton
+                Clicked="ImageButton_Clicked_2"
+                Grid.Column="1"
+                Margin="10,10,20,80"
+                HorizontalOptions="End"
+                HeightRequest="100"
+                Source="user.png">
+                
+            </ImageButton>
+        
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <RoundRectangle Margin="-2,-30,-2,-2"
+                            CornerRadius="30,30,0,0"
+                            Fill="White"/>
+            
+            <VerticalStackLayout Margin="30,10,30,0">
+                <Label 
+                    FontAttributes="Bold"
+                       FontFamily="Lora"
+                       FontSize="Medium"
+                       Text="Bienvenid@!"
+                       TextColor="#010101"/>
+
+                <Label 
+                    FontFamily="Sedan"
+                       Text="Inicia Sesión Para Trabajar"
+                       TextColor="#A7A7A7"/>
+
+                <Grid Margin="2,30,2,2" ColumnDefinitions=".4*,.6*">
+                    <RoundRectangle Background="White"
+                                    CornerRadius="10"
+                                    HeightRequest="60"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    WidthRequest="60"/>
+                    <Image Source="email.png"/>
+                    <Entry
+                       FontFamily="Regular"
+                       TextColor="Black"
+                       Grid.Column="1"
+                       Placeholder="Correo..."
+                       Text=""
+                       VerticalOptions="Center"/>
+                </Grid>
+
+                <Grid Margin="2,30,2,2" ColumnDefinitions=".4*,.7*">
+                    <RoundRectangle Background="White"
+                                    CornerRadius="10"
+                                    HeightRequest="60"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    WidthRequest="60"/>
+                    <Image Source="password.jpg"/>
+                    <Entry
+                       FontFamily="Regular"
+                       TextColor="Black"
+                       Grid.Column="1"
+                       Placeholder="Contraseña..."
+                       IsPassword="True" 
+                       Text=""
+                       VerticalOptions="Center"/>
+                </Grid>
+
+                <Button
+                    x:Name="Login"
+                    Clicked="Clicked"
+                    Margin="0,30,0,0"
+                    BackgroundColor="Black"
+                    HeightRequest="60"
+                    Text="Inicia"
+                    TextColor="White"/>
+
+            </VerticalStackLayout>
+        </Grid>
+        
+    </Grid>
+    
+</ContentPage>

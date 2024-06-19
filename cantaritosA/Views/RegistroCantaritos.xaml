@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="cantaritosA.Views.RegistroCantaritos"
+             Title="RegistroCantaritos"
+             NavigationPage.HasNavigationBar="False">
+  
+  <Grid RowDefinitions=".3*,.7*">
+        <Image Aspect="AspectFill" Source="food.png"/>
+         <Grid BackgroundColor="#656565" Opacity=".6"/>
+
+        <Grid ColumnDefinitions="*,*">
+            
+            <ImageButton 
+                         Clicked="ImageButton_Clicked_1"
+                         Source="logo.png"
+                         Aspect="AspectFit"
+                         HeightRequest="160"
+                         Margin="0,30,35,10"
+                         WidthRequest="180"
+                         VerticalOptions="Center">
+            </ImageButton>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <RoundRectangle Margin="-2,-30,-2,-2"
+                            CornerRadius="30,30,0,0"
+                            Fill="#FFFEDF"/>
+            <Image 
+                   Margin="10,0,10,400"
+                   HorizontalOptions="End"
+                   HeightRequest="100"
+                   Source="making.png"/>
+
+            <VerticalStackLayout Margin="30,10,30,0">
+                <Label 
+                     FontAttributes="Bold"
+                     FontFamily="Lora"
+                     FontSize="Medium"
+                     Text="Tu Cuenta"
+                     TextColor="#010101"/>
+
+                <Label 
+                     FontFamily="Sedan"
+                     Text="De Trabajo..."
+                     TextColor="#A7A7A7"/>
+            </VerticalStackLayout>
+
+            <Grid Margin="0,20,0,170" ColumnDefinitions=".4*,.6*">
+                <RoundRectangle Background="#FFFEDF"
+                        CornerRadius="10"
+                        HeightRequest="10"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="1"/>
+                <Image Source="us1.png"/>
+                <Entry
+                    FontFamily="Regular"
+                    TextColor="Black"
+                    Margin="0,160,0,0"
+                    Grid.Column="1"
+                    Placeholder="Usuario..."
+                    Text="Samuel Balleza Mtz"
+                    VerticalOptions="Fill"/>
+            </Grid>
+
+            <Grid Margin="10,70,60,0" ColumnDefinitions=".4*,.6*">
+                <RoundRectangle Background="#FFFEDF"
+                        CornerRadius="10"
+                        HeightRequest="10"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="10"/>
+                <Image Source="em1.png"/>
+                <Entry
+                    FontFamily="Regular"
+                    TextColor="Black"
+                    Grid.Column="1"
+                    Placeholder="Correo..."
+                    Text="balleza.sami.19@gmail.com"
+                    VerticalOptions="Center"/>
+            </Grid>
+
+            <Grid Margin="20,300,50,0" ColumnDefinitions=".4*,.7*">
+                <RoundRectangle     Background="#FFFEDF"
+                                    CornerRadius="10"
+                                    HeightRequest="60"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    WidthRequest="1"/>
+                <Image Source="ps1.png"/>
+                <Entry
+                       FontFamily="Regular"
+                       TextColor="Black"
+                       Grid.Column="1"
+                       Placeholder="Contraseña..."
+                       IsPassword="True" 
+                       Text="Cantaritos"
+                       VerticalOptions="Center"/>
+            </Grid>
+
+        </Grid>
+        
+  </Grid>
+    
+</ContentPage>
